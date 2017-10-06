@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Josefin Slab";
+	  font-style: normal;
 }
+
+
 
 *,
 :before,
@@ -13,6 +19,7 @@
 
 html,
 body {
+  text-align: center;
     min-height: 100%;
 }
 
@@ -27,21 +34,100 @@ body {
     height: 500px;
 }
 
+.overlay-back {
+    background-image: url('http://unsplash.it/1200x800');
+}
 
+.overlay {
+  background: rgba(14, 193, 254, 0.6);
+  border: 0.5px dotted rgb(14, 193, 254);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  margin: auto;
+  z-index: -1;
+  padding-top: 11%;
+}
 
 /* Clip text element */
 .clip-text {
-  font-size: 6em;
+  position: relative;
+  font-size: 5.7em;
   font-weight: bold;
   line-height: 1;
-  position: relative;
-  display: inline-block;
-  margin: 2em .25em 0 .25em;
-  padding: .5em .75em;
+  margin: 1em .25em 0 .25em;
   text-align: center;
   color: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/*.urban-ball, .amanda-ball {
+  height: 300px;
+  width: 300px;
+  background: black;
+  opacity: 0.2;
+  padding: 5%;
+}*/
+
+h1.urban > a, h1.amanda > a {
+  background: black;
+  opacity: 0.2;
+  color: hotpink;
+  padding: 50% 35%;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+h1.amanda > a {
+  padding: 52% 37%;
+}
+
+h1.urban > a:hover, h1.amanda > a:hover {
+  transition-duration: 1s, 1.3s;
+  opacity: 0.3;
+  color: white;
+}
+
+h1.urban, h1.amanda {
+  color: #F794BB;
+  text-decoration: none;
+}
+
+h1.urban:hover, h1.amanda:hover {
+  color: hotpink;
+  transition-duration: 1s;
+}
+
+h1.urban ~ iframe {
+  -webkit-animation-duration: 1.5s;
+  animation-name: bounceInLeft;
+  animation-duration: 1.5s;
+}
+
+h1.amanda ~ iframe {
+  -webkit-animation-duration: 1.5s;
+  animation-name: bounceInRight;
+  animation-duration: 1.5s;
+}
+
+h1.urban:hover~ iframe {
+  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: ani;
+    animation-duration: 1s;
+    width: 100%;
+}
+
+h1.amanda:hover ~ iframe {
+  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: ani;
+    animation-duration: 1s;
+    width: 100%;
+}
+
+@keyframes ani {
+  from {height: 0%; width: 0%;}
+  to {height: 100%; width: 100%;}
 }
 
 p {
@@ -55,11 +141,66 @@ p {
     /* Color fallback */
     color: #fff;
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
+@keyframes changeLetter {
+  0% {
+    content: "Foftware Engineer";
+  }
+  5% {
+    content: "Frftware Engineer";
+  }
+  12% {
+    content: "Frotware Engineer";
+  }
+  18% {
+    content: "Fronware Engineer";
+  }
+  24% {
+    content: "Frontare Engineer";
+  }
+  30% {
+    content: "Frontere Engineer";
+  }
+  36% {
+    content: "Frontene Engineer";
+  }
+  42% {
+    content: "Frontend Engineer";
+  }
+  54% {
+    content: "Srontend Engineer";
+  }
+  60%{
+    content: "Soontend Engineer";
+  }
+  66%{
+    content: "Sofntend Engineer";
+  }
+  72%{
+    content: "Softtend Engineer";
+  }
+  78%{
+    content: "Softwend Engineer";
+  }
+  84%{
+    content: "Softwand Engineer";
+  }
+  90%{
+    content: "Softward Engineer";
+  }
+  96%{
+    content: "Software Engineer";
+  }
+  100% {
+    content: "Software Engineer";
+  }
+}
 
+p::after {
+  animation: changeLetter 5s linear infinite;
+}
 .title {
     font-size: 25px;
     position: relative;
@@ -105,6 +246,8 @@ p {
     bottom: .125em;
     left: .125em;
     background-color: #fff;
+
+    z-index: 2000;
 }
 
 .clip-text--no-textzone:before {
@@ -124,23 +267,31 @@ p {
 }
 
 .clip-text_one {
-    background-image: url(https://wallpaperbrowse.com/media/images/tumblr_inline_mwf14khrWx1rbgndj.gif);
+    background-image: url('http://unsplash.it/1200x800');
+    background-blend-mode: overlay;
+    background-color: rgba(255,255,255, 0.8);
 }
 
 .parallax {
     padding-top: 14%;
-    background-image: url(https://wallpaperbrowse.com/media/images/tumblr_nndqapD9YS1qcdtsho1_1280.jpg);
     min-height: 703px;
+    vertical-align: middle;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    background-color: #fff;
+}
+
+.parallax3 {
+     background-color: #fff;
+     padding: 19% 1%;
 }
 
 .parallax-two {
    padding-top: 19%;
-   background-image: url(https://wallpaperbrowse.com/media/images/tree_wallpaper_tumblr.jpg);
+   background-image: url('http://unsplash.it/1200x800');
    min-height: 703px;
    background-attachment: fixed;
    background-position: center;
@@ -156,6 +307,17 @@ p {
    text-align: center;
 }
 
+#heart {
+  display: none;
+}
+.heart:hover .emo { display: none; }
+.heart:hover #heart { display: inline; }
+
+
+.heart:hover, .frameworks:hover {
+  transition-duration: 1s;
+  color: hotpink;
+}
 
 .fixed {
 	position: fixed;
@@ -164,10 +326,15 @@ p {
 	z-index: 1;
 }
 
+.shadow {
+  box-shadow: 0px 0px 5px 0px #bbbbbb;
+}
+
 nav {
+  bottom: 0px;
 	position: absolute;
 	width: 100%;
-	height: 70px;
+	height: 100px;
 	background: #000;
 }
 
@@ -193,26 +360,26 @@ nav li a:hover {
 }
 
 .about {
-  font-size: 19px;
+  font-size: 30px;
   color: #F794BB;
-  margin-top: 2.0em;
-  margin-bottom: 0.5em;
-  margin-left: -111px;
+  margin-top: 1em;
+  margin-bottom: 0.7em;
   text-transform: uppercase;
-  letter-spacing: 5px;
-  font-weight: 700;
+  letter-spacing: 3px;
+  font-weight: 200s;
 }
 
 .aboutme {
+  letter-spacing: 1.5px;
   color: #F794BB;
   margin-top: 1.3em;
-  max-width: 500px;
+  max-width: 800px;
   margin: auto;
   display: inline-block;
-  font-weight: 200;
-  font-size: 23px;
-  line-height: 30px;
-  text-align: left;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 40px;
+  text-align: center;
 }
 
 .intro {
@@ -220,24 +387,7 @@ nav li a:hover {
 }
 
 .container{
-  margin-left: 13em;
-}
-
-#picture {
-  width: 120px;
-  height: 120px;
-  background: #F794BB;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50%;
-  margin: auto;
-  margin-left: 2.5em;
-  margin-right: 8.3em;
-  margin-bottom: 1.4em;
-  display: inline-block;
-  background-image: url('https://ucarecdn.com/aa7fbbc9-19e2-41de-adbf-45198873789e/me.jpg');
-  background-size: 100% auto;
-
+  text-align: center;
 }
 
 
@@ -250,6 +400,7 @@ nav li a:hover {
   height: 70px;
   width: 100%;
   background-color: black;
+  margin-top: 10%;
 }
 
 .projects {
@@ -266,26 +417,43 @@ nav li a:hover {
 .about-projects {
   color: #F794BB;
   margin-top: 1.3em;
-  max-width: 332px;
   margin: auto;
-  font-size: 25px;
-  margin-left: 1.2em;
+  font-size: 30px;
   display: inline-block;
   font-weight: 200;
-  line-height: 30px;
+  line-height: 40px;
   text-align: center;
+  height: 500px;
+  padding: 8% 5%;
+  width: 500px;
+  background-color: hsl(213, 100%, 50%);
+  border-radius: 50%;
 }
 
 .contact {
-  font-size: 17px;
+  font-size: 25px;
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 1.3em;
   font-weight: 700;
+  width: 500px;
+  height: 500px;
+  margin:auto;
+  border-radius: 50%;
+  padding-top: 13%;
+}
+
+.contacts {
+  width: 600px;
+  height: 600px;
+  margin:auto;
+  background-color: rgba(255, 90, 176, 0.2);
+  border-radius: 0.5px solid rgba(255, 90, 176, 0.8);
+  border-radius: 50%;
 }
 
 .fa {
-  margin: 10px 14px;
+  margin: 30px 14px;
 }
 
 .fa-twitter {
@@ -350,57 +518,26 @@ nav li a:hover {
 }
 
 .top-container {
+  margin: 0 5%;
   position: relative;
   display: flex;
-  justify-content: space-around;
-}
-
-.bottom-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.top-picture {
-  margin-top: -175px;
-  height: 112px;
-  width: 200px;
-  background-color: #fb9696;
-}
-
-.bottom-picture {
-  height: 112px;
-  width: 200px;
-  background-color:  #fb9696;
-  margin-top: 54px;
-}
-
-#top-picture1 {
-  background-image: url('https://ucarecdn.com/9b4be645-fcc9-4212-a671-60e8d7017b84/concreet.png');
-  background-size: 100% auto;
-}
-
-#top-picture2 {
-  background-image: url('https://ucarecdn.com/3ddd27a8-5c24-462a-97d2-097dd15ed8d2/lifetime.png');
-  background-size: 100% auto;
-}
-
-#bottom-picture1 {
-  background-image: url('https://ucarecdn.com/a53a09cc-680a-49a3-b343-af19deeac5df/urbantrails.png');
-  background-size: 100% auto;
-}
-
-#bottom-picture2 {
-  background-image: url('https://ucarecdn.com/39ef969a-b519-40ee-93ab-23e443a6f009/sorry.jpeg');
-  background-size: 100% auto;
+  z-index: 1;
+  margin-top: -10%;
+  justify-content: space-between;
 }
 
 .closing {
-  max-width: 350px;
-  margin: auto;
-  font-size: 21px;
+  position: relative;
+  margin-top: -60%;
+  margin-left: 25%;
+  max-width: 300px;
+  height: 300px;
+  padding: 9% 5% 13% 5%;
+  font-size: 20px;
   line-height: 30px;
-  margin-bottom: 31px;
-  font-weight: 200;
+  font-weight: 500;
+  background-color: rgba(189, 242, 156, 0.6);
+  border-radius: 50%;
 }
 
 .animatable {
@@ -413,6 +550,60 @@ nav li a:hover {
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
+}
+
+.myself {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    bottom: 10px;
+    background-image: url('https://ucarecdn.com/aa7fbbc9-19e2-41de-adbf-45198873789e/me.jpg');
+    background-repeat: no-repeat;
+    margin: auto;
+    display: none;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    animation-name: anim;
+    animation-duration: 1.5s;
+}
+
+.me:hover .myself {
+   animation-name: wiggle;
+}
+
+@keyframes wiggle {
+  20% {
+    box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(7deg);
+  }
+
+  40% {
+    box-shadow:  inset -11px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(-14deg);
+  }
+
+  60% {
+    box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(4deg);
+  }
+
+  80% {
+    box-shadow:  inset -8px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes anim {
+  0% {
+    height: 200px;
+    width: 200px;
+    margin-top: -2000px;
+  }
+  100% {
+    margin-top: 0%;
+  }
 }
 
 /* show objects being animated */
@@ -435,6 +626,82 @@ nav li a:hover {
   -ms-animation-play-state: running;
   -o-animation-play-state: running;
   animation-play-state: running;
+}
+
+@-webkit-keyframes bounceInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+	}
+	60% {
+		-webkit-transform: translateX(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateX(5px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-moz-keyframes bounceInRight {
+  0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+	}
+	60% {
+		-webkit-transform: translateX(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateX(5px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-o-keyframes bounceInRight {
+  0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+	}
+	60% {
+		-webkit-transform: translateX(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateX(5px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
+}
+
+@keyframes bounceInRight {
+  0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+	}
+	60% {
+		-webkit-transform: translateX(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateX(5px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
 }
 
 @-webkit-keyframes bounceInLeft {
@@ -576,6 +843,8 @@ nav li a:hover {
 		-o-transform: scale(1);
 	}
 }
+
+
 
 @keyframes bounceIn {
 	0% {
