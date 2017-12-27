@@ -1,0 +1,4 @@
+export default types = {
+  UPLOAD_FESTIVALS: 'UPLOAD_FESTIVALS',
+  UPLOAD_ARTISTS: 'UPLOAD_ARTISTS',
+}
